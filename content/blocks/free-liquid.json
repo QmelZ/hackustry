@@ -1,0 +1,8 @@
+{
+	"type": "LiquidSource"
+	"name": "Hackusated Liquid Generator"
+	"description": "Produces free liquids."
+	"requirements":[]
+	"category":"liquid"
+	"research":"free-item"
+}

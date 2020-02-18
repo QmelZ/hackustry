@@ -1,0 +1,8 @@
+{
+	"type": "ItemSource"
+	"name": "Hackusated Item Generator"
+	"description": "Generates free materials."
+	"requirements":[]
+	"category":"distribution"
+	"research":"core-shard"
+}

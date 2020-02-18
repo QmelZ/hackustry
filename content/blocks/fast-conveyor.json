@@ -1,0 +1,9 @@
+{
+	"type": "Conveyor"
+	"name": "Hackusated Conveyor"
+	"description": "Transports items as fast as it can."
+	"requirements":[]
+	"category":"distribution"
+	"speed":99999
+	"research":"free-item"
+}
