@@ -2,18 +2,13 @@
 Hackustry mod for Mindustry.
 
 # Features
-Hackusated Item Generator.
+Hackusated Item Generator
 
-Hackusated Liquid Generator.
+Hackusated Liquid Generator
 
-Hackusated Power Generator.
+Hackusated Power Generator
 
 Hackusated Conveyor
-
-# To-Do List
-Hackusated Conduit.
-
-Hackustry-Legit Mod.
 
 # Special Thanks To
 [@DeltaNedas](https://github.com/DeltaNedas) For helping me with the actual mod making, coding part.
