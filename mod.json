@@ -1,6 +1,6 @@
-{
-  "name": "Hackustry",
-  "author": "QmelZ",
-  "description": "This is the hacky one. For the legit version: {QmelZ/Hackustry-Legit}"
-  "version": 1.4
-}
+name: "hackustry"
+displayName: "Hackustry"
+author: "Qmelz and RTOmega"
+description: "A mod that adds hack tools."
+version: "[#9cb6f4]1.5[]"
+minGameVersion: "107.0"
