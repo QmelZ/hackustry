@@ -1,5 +1,5 @@
 # Hackustry
-Hackustry mod for Mindustry. Has all sorts of hackusated OP things for your OP stuff needs.
+Hackustry mod for Mindustry. Has all sorts of hackusated OP things for all your OP stuff needs.
 
 # Features
 Hackusated:
