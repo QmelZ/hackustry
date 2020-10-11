@@ -1,0 +1,13 @@
+{
+	"name": "Hackusated Overdrive Projector"
+	"description": "A overdrive projector that will give you all the S P E E D"
+	"type": "OverdriveProjector"
+	"health": 99999
+	"size": 2
+	"range": 999
+    "consumes": {}
+    "speedBoost": 10
+	"requirements": [],
+	"category": "effect",
+	"research": "hackusated-power-generator"
+}

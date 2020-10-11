@@ -1,0 +1,14 @@
+{
+	"name": "Hackusated Mender",
+	"description": "This mender isn't even funny"
+	"type": "MendProjector"
+	"health": 99999
+	"size": 2
+	"range": 999
+	"reload": 10
+	"consumes": {}
+	"healPercent": 200
+	"requirements": []
+	"category": "effect"
+	"research": "hackusated-power-generator"
+}

@@ -1,0 +1,17 @@
+{
+    "type": "ForceProjector"
+    "name": "Hackusated Force Projector"
+    "size": 3
+    "health": 99999
+    "radius": 999
+    "breakage": 99999
+    "cooldownNormal": 0.1
+    "cooldownLiquid": 0.1
+    "cooldownBrokenBase": 0.1
+    "category": "effect"
+    "requirements": []
+    "consumes": {
+		"items": {}
+	},
+    "research": "hackusated-mender"
+}
