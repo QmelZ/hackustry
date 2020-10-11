@@ -1,14 +1,15 @@
 # Hackustry
-Hackustry mod for Mindustry.
+Hackustry mod for Mindustry. Has all sorts of hackusated OP things for your OP stuff needs.
 
 # Features
-Hackusated Item Generator
-
-Hackusated Liquid Generator
-
-Hackusated Power Generator
-
-Hackusated Conveyor
+Hackusated:
+- Inf item, liquid, and power source
+- Conveyor
+- Mender
+- Overdrive projector
+- Force projector
+- Walls
+- And more to come!
 
 # Special Thanks To
 [@DeltaNedas](https://github.com/DeltaNedas) For helping me with the actual mod making, coding part.
