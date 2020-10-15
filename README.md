@@ -10,6 +10,14 @@ Hackusated Power Generator
 
 Hackusated Conveyor
 
+Hackdusted Wall
+
+Large Hackdusted Wall
+
+Huge Hackdusted Wall
+
+Gigantic Hackdusted Wall
+
 # Special Thanks To
 [@DeltaNedas](https://github.com/DeltaNedas) For helping me with the actual mod making, coding part.
 
