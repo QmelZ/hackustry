@@ -1,0 +1,10 @@
+{
+	"name": "Gigantic Hackusated Wall",
+	"description": "A gigantic wall with extremely high health.",
+	"type": "Wall",
+	"health": 2147483647,
+	"size": 2,
+	"requirements": [],
+	"category": "defense",
+	"research": "hackusated-wall"
+}
