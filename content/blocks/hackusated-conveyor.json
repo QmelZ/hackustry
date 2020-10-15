@@ -1,10 +1,10 @@
 {
-	"type": "Conveyor"
-	"name": "Hackusated Conveyor"
-	"description": "Transports items as fast as it can."
-	"health": 99999 
-	"requirements": []
-	"category": "distribution"
-	"speed": 99999
+	"type": "Conveyor",
+	"name": "Hackusated Conveyor",
+	"description": "Transports items as fast as it can.",
+	"health": 2147483647, 
+	"requirements": [],
+	"category": "distribution",
+	"speed": 999999,
 	"research": "hackusated-item-generator"
 }

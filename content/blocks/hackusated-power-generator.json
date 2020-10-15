@@ -1,9 +1,9 @@
 {
-	"type": "PowerSource"
-	"name": "Hackusated Power Generator"
-	"description": "Generates free power."
-	"health": 99999
-	"requirements": []
-	"category": "power"
+	"type": "PowerSource",
+	"name": "Hackusated Power Generator",
+	"description": "Generates free power.",
+	"health": 2147483647,
+	"requirements": [],
+	"category": "power",
 	"research": "hackusated-liquid-generator"
 }

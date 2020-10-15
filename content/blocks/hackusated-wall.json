@@ -1,10 +1,10 @@
 {
-	"name": "Hackusated Wall"
-	"description": "A wall with extremely high health."
-	"type": "Wall"
-	"health": 99999
-	"size": 1
-	"requirements": []
-	"category": "defense"
+	"name": "Hackusated Wall",
+	"description": "A wall with extremely high health.",
+	"type": "Wall",
+	"health": 2147483647,
+	"size": 1,
+	"requirements": [],
+	"category": "defense",
 	"research": "hackusated-item-generator"
 }
