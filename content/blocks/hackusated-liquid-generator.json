@@ -1,9 +1,0 @@
-{
-	"type": "LiquidSource"
-	"name": "Hackusated Liquid Generator"
-	"description": "Produces free liquids."
-	"health": 99999
-	"requirements": []
-	"category": "liquid"
-	"research": "hackusated-item-generator"
-}
