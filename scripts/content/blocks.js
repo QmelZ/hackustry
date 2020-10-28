@@ -1,5 +1,20 @@
-// Set build visibility of all blocks to always visible
-Vars.content.blocks().each(e => e.buildVisibility = BuildVisibility.shown);
+// Set build visibility of certain blocks to always visible
+Blocks.coreShard.buildVisibility = BuildVisibility.shown;
+Blocks.blockForge.buildVisibility = BuildVisibility.shown;
+Blocks.blockLoader.buildVisibility = BuildVisibility.shown;
+Blocks.blockUnloader.buildVisibility = BuildVisibility.shown;
+Blocks.itemSource.buildVisibility = BuildVisibility.shown;
+Blocks.itemVoid.buildVisibility = BuildVisibility.shown;
+Blocks.liquidSource.buildVisibility = BuildVisibility.shown;
+Blocks.liquidVoid.buildVisibility = BuildVisibility.shown;
+Blocks.powerSource.buildVisibility = BuildVisibility.shown;
+Blocks.powerVoid.buildVisibility = BuildVisibility.shown;
+Blocks.illuminator.buildVisibility = BuildVisibility.shown;
+
+// I don't think a unit limit is needed
+Blocks.coreShard.unitCapModifier = 2147483647
+Blocks.coreFoundation.unitCapModifier = 2147483647
+Blocks.coreNucleus.unitCapModifier = 2147483647
 
 // Make the reconstructors instant and free
 Blocks.additiveReconstructor.constructTime = 0;

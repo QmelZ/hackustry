@@ -5,5 +5,5 @@ Vars.enableConsole = true;
 require("content/unlock");
 require("content/blocks");
 
-// consol
+// "consol", makes a lot of sense. :D
 Events.on(WorldLoadEvent, e => {Vars.state.rules.infiniteResources = true});
