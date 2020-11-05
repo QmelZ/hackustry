@@ -1,5 +1,4 @@
 // Set build visibility of certain blocks to always visible
-Blocks.coreShard.buildVisibility = BuildVisibility.shown;
 Blocks.blockForge.buildVisibility = BuildVisibility.shown;
 Blocks.blockLoader.buildVisibility = BuildVisibility.shown;
 Blocks.blockUnloader.buildVisibility = BuildVisibility.shown;
