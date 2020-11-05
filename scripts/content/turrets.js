@@ -1,21 +1,4 @@
 // Generic turret stuff, i hope this doesn't break other blocks
-//Vars.content.blocks().each(e => e.reloadTime = 0);
-//Vars.content.blocks().each(e => e.spread = 0);
-//Vars.content.blocks().each(e => e.inaccuracy = 0);
-//Vars.content.blocks().each(e => e.recoilAmount = 0);
-//Vars.content.blocks().each(e => e.shootShake = 0);
-//Vars.content.blocks().each(e => e.restitution = 0);
-//Vars.content.blocks().each(e => e.xRand = 0);
-//Vars.content.blocks().each(e => e.cooldown = 10);
-//Vars.content.blocks().each(e => e.rotatespeed = 2147483647);
-//Vars.content.blocks().each(e => e.targetGround = true);
-//Vars.content.blocks().each(e => e.targetAir = true);
-//Vars.content.blocks().each(e => e.shootType.collidesGround = true);
-//Vars.content.blocks().each(e => e.shootType.collidesAir = true);
-
-//    if(typeof(e.shootType.collidesGround) !== "undefined") e.shootType.collidesGround = true;
-//    if(typeof(e.shootType.collidesAir) !== "undefined") e.shootType.collidesAir = true;
-
 Vars.content.blocks().each(e => {
     if(typeof(e.reloadTime) !== "undefined") e.reloadTime = 0;
     if(typeof(e.spread) !== "undefined") e.spread = 0;
