@@ -1,20 +1,29 @@
 // Generic turret stuff
-Vars.content.blocks().each(e => {
-    if(typeof(e.reloadTime) !== "undefined") e.reloadTime = 0;
-    if(typeof(e.spread) !== "undefined") e.spread = 0;
-    if(typeof(e.inaccuracy) !== "undefined") e.inaccuracy = 0;
-    if(typeof(e.recoilAmount) !== "undefined") e.recoilAmount = 0;
-    if(typeof(e.shootShake) !== "undefined") e.shootShake = 0;
-    if(typeof(e.restitution) !== "undefined") e.restitution = 0;
-    if(typeof(e.xRand) !== "undefined") e.xRand = 0;
-    if(typeof(e.cooldown) !== "undefined") e.cooldown = 10;
-    if(typeof(e.rotateSpeed) !== "undefined") e.rotateSpeed = 2147483647;
-    if(typeof(e.targetGround) !== "undefined") e.targetGround = true;
-    if(typeof(e.targetAir) !== "undefined") e.targetAir = true;
-    if(typeof(e.shootType) !== "undefined") {
-        if(typeof(e.shootType.collidesGround) !== "undefined") e.shootType.collidesGround = true;
-        if(typeof(e.shootType.collidesAir) !== "undefined") e.shootType.collidesAir = true;
+const isDef = (value) => typeof value !== "undefined";
+const resets = [
+  "reloadTime",
+  "spread",
+  "inaccuracy",
+  "recoilAmount",
+  "shootShake",
+  "restitution",
+  "xRand",
+];
+Vars.content.blocks().each((block) => {
+  resets.forEach((reset) => {
+    if (isDef(block[reset])) {
+      block[reset] = 0;
     }
+  });
+  if (isDef(block.cooldown)) block.cooldown = 10;
+  if (isDef(block.rotateSpeed)) block.rotateSpeed = 2147483647;
+  if (isDef(block.targetGround)) block.targetGround = true;
+  if (isDef(block.targetAir)) block.targetAir = true;
+  if (isDef(block.shootType)) {
+    if (isDef(block.shootType.collidesGround))
+      block.shootType.collidesGround = true;
+    if (isDef(block.shootType.collidesAir)) block.shootType.collidesAir = true;
+  }
 });
 
 // Lancerdown

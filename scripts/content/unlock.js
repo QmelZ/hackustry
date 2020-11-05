@@ -1,6 +1,4 @@
 // Unlock EVERYTHING
-Vars.content.blocks().each(e => e.alwaysUnlocked = true);
-Vars.content.items().each(e => e.alwaysUnlocked = true);
-Vars.content.liquids().each(e => e.alwaysUnlocked = true);
-Vars.content.units().each(e => e.alwaysUnlocked = true);
-Vars.content.sectors().each(e => e.alwaysUnlocked = true);
+["blocks", "items", "liquids", "units", "sectors"].forEach((contentType) => {
+  Vars.content[contentType].each((thing) => (thing.alwaysUnlocked = true));
+});

@@ -1,5 +1,6 @@
 # Hackustry v3
-Hackustry v3: The world's first vanilla-compatible* cheat mod for mindustry
+
+Hackustry v3: The world's first vanilla-compatible\* cheat mod for mindustry
 
 # Vanilla-Compatibility
 
@@ -19,6 +20,7 @@ v2: [QmelZ/Hackustry-v2](https://github.com/QmelZ/Hackustry-v2)
 - Can be used without losing any data. (My testing, I am not responsible for any data lost.)
 
 # Special Thanks To
+
 [@DeltaNedas](https://github.com/DeltaNedas) for helping me with the actual mod making, coding part.
 
 [@iDenis124](https://github.com/iDenis124) and [@nordpol](https://github.com/nordpol) for being there when this mod was new :D
