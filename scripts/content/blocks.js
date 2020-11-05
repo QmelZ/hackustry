@@ -34,5 +34,5 @@ modifyBlocks(reconstructors, "constructTime", 0);
 reconstructors.forEach((i) => Blocks[i].consumes.items());
 
 function modifyBlocks(blocks, property, value) {
-  blocks.forEach((block) => (block[property] = value));
+  blocks.forEach((block) => (Blocks[block][property] = value));
 }
