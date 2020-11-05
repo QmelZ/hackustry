@@ -1,3 +1,8 @@
+//helper function
+function modifyBlocks(blocks, property, value) {
+  blocks.forEach((block) => (Blocks[block][property] = value));
+}
+
 // Set build visibility of certain blocks to always visible
 modifyBlocks(
   [
@@ -32,7 +37,3 @@ const reconstructors = [
 ];
 modifyBlocks(reconstructors, "constructTime", 0);
 reconstructors.forEach((i) => Blocks[i].consumes.items());
-
-function modifyBlocks(blocks, property, value) {
-  blocks.forEach((block) => (Blocks[block][property] = value));
-}
