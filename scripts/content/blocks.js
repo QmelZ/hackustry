@@ -1,6 +1,8 @@
 //helper function
 function modifyBlocks(blocks, property, value) {
-  blocks.forEach((block) => (Blocks[block][property] = value));
+  blocks.forEach((block) => {
+    Blocks[block][property] = value;
+  });
 }
 
 // Set build visibility of certain blocks to always visible

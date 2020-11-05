@@ -9,7 +9,7 @@ const resets = [
   "restitution",
   "xRand",
 ];
-Vars.content.blocks().each((block) => {
+Vars.content.blocks.each((block) => {
   resets.forEach((reset) => {
     if (isDef(block[reset])) {
       block[reset] = 0;
