@@ -8,13 +8,14 @@ Hackustry v3 does not add anything new, it just uses vanilla features to impleme
 # For older releases:
 
 v1: [QmelZ/Hackustry-v1](https://github.com/QmelZ/Hackustry-v1)
+
 v2: [QmelZ/Hackustry-v2](https://github.com/QmelZ/Hackustry-v2)
 
 # Features
 
 - Adds:
   - Nothing
-- Uses vanilla code to implement anything needed
+- Uses vanilla code to implement everything
 - Can be used without losing any data. (My testing, I am not responsible for any data lost.)
 
 # Special Thanks To
