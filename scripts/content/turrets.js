@@ -1,4 +1,4 @@
-// Generic turret stuff, i hope this doesn't break other blocks
+// Generic turret stuff
 Vars.content.blocks().each(e => {
     if(typeof(e.reloadTime) !== "undefined") e.reloadTime = 0;
     if(typeof(e.spread) !== "undefined") e.spread = 0;
