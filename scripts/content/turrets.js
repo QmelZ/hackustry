@@ -4,7 +4,6 @@ Vars.content.blocks().each(e => {
     if(typeof(e.spread) !== "undefined") e.spread = 0;
     if(typeof(e.inaccuracy) !== "undefined") e.inaccuracy = 0;
     if(typeof(e.recoilAmount) !== "undefined") e.recoilAmount = 0;
-    if(typeof(e.shootShake) !== "undefined") e.shootShake = 0;
     if(typeof(e.restitution) !== "undefined") e.restitution = 0;
     if(typeof(e.xRand) !== "undefined") e.xRand = 0;
     if(typeof(e.cooldown) !== "undefined") e.cooldown = 10;
