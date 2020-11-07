@@ -5,6 +5,7 @@ Vars.enableConsole = true;
 require("content/unlock");
 require("content/blocks");
 require("content/turrets");
+require("/content/cursed");
 
 // Enable infniteResources upon a map load
 Events.on(WorldLoadEvent, e => {Vars.state.rules.infiniteResources = true});

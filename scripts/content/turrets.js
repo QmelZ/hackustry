@@ -1,18 +1,20 @@
 // Generic turret stuff
 Vars.content.blocks().each(e => {
-    if(typeof(e.reloadTime) !== "undefined") e.reloadTime = 0;
-    if(typeof(e.spread) !== "undefined") e.spread = 0;
-    if(typeof(e.inaccuracy) !== "undefined") e.inaccuracy = 0;
-    if(typeof(e.recoilAmount) !== "undefined") e.recoilAmount = 0;
-    if(typeof(e.restitution) !== "undefined") e.restitution = 0;
-    if(typeof(e.xRand) !== "undefined") e.xRand = 0;
-    if(typeof(e.cooldown) !== "undefined") e.cooldown = 10;
-    if(typeof(e.rotateSpeed) !== "undefined") e.rotateSpeed = 2147483647;
-    if(typeof(e.targetGround) !== "undefined") e.targetGround = true;
-    if(typeof(e.targetAir) !== "undefined") e.targetAir = true;
-    if(typeof(e.shootType) !== "undefined") {
-        if(typeof(e.shootType.collidesGround) !== "undefined") e.shootType.collidesGround = true;
-        if(typeof(e.shootType.collidesAir) !== "undefined") e.shootType.collidesAir = true;
+    if(e instanceof Turret) {
+        e.reloadTime = 0;
+        e.spread = 0;
+        e.inaccuracy = 0;
+        e.recoilAmount = 0;
+        e.restitution = 0;
+        e.xRand = 0;
+        e.cooldown = 10;
+        e.rotateSpeed = 2147483647;
+        e.targetGround = true;
+        e.targetAir = true;
+        if(typeof(e.shootType) !== "undefined") {
+            if(typeof(e.shootType.collidesGround) !== "undefined") e.shootType.collidesGround = true;
+            if(typeof(e.shootType.collidesAir) !== "undefined") e.shootType.collidesAir = true;
+        }
     }
 });
 
