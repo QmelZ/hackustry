@@ -9,6 +9,10 @@ Blocks.liquidVoid.buildVisibility = BuildVisibility.shown;
 Blocks.powerSource.buildVisibility = BuildVisibility.shown;
 Blocks.powerVoid.buildVisibility = BuildVisibility.shown;
 Blocks.illuminator.buildVisibility = BuildVisibility.shown;
+Blocks.scrapWall.buildVisibility = BuildVisibility.shown;
+Blocks.scrapWallLarge.buildVisibility = BuildVisibility.shown;
+Blocks.scrapWallHuge.buildVisibility = BuildVisibility.shown;
+Blocks.scrapWallGigantic.buildVisibility = BuildVisibility.shown;
 
 // I don't think a unit limit is needed
 Blocks.coreShard.unitCapModifier = 2147483647
