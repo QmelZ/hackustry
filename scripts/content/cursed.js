@@ -5,8 +5,8 @@ Events.on(ClientLoadEvent, b => {
         "No",
         "Yes",
         ()=>{
-            print("[accent]Cursed mode not enabled[]"
-        )},
+            print("[accent]Cursed mode not enabled[]");
+        },
         ()=>{
             Vars.content.blocks().each(e => {
                 if(e.size === 3 ) e.size = 1;
