@@ -1,7 +1,8 @@
 // obligatory comment here
 Events.on(ClientLoadEvent, b => {
     Vars.ui.showCustomConfirm(
-        "[]Enable [#8f00ff]Hackustry[] Cursed Mode?[]","[#8f00ff]Hackustry[] cursed mode makes all blocks 1x1 or 2x2 for making zipped schematics, but it effectively ruins all vanilla schematics.\n[accent]Do you want to enable cursed mode?[]",
+        "[]Enable [#8f00ff]Hackustry[] Cursed Mode?[]",
+        "[#8f00ff]Hackustry[] cursed mode makes all blocks 1x1 or 2x2 for making zipped schematics, but it effectively ruins all vanilla schematics.\n[accent]Do you want to enable cursed mode?[]",
         "No",
         "Yes",
         ()=>{
@@ -14,5 +15,6 @@ Events.on(ClientLoadEvent, b => {
             });
             Blocks.coreShard.size = 3;
             Blocks.coreFoundation.size = 4;
-        });
+        }
+    );
 });
