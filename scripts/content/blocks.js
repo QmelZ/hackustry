@@ -14,10 +14,10 @@ Blocks.scrapWallLarge.buildVisibility = BuildVisibility.shown;
 Blocks.scrapWallHuge.buildVisibility = BuildVisibility.shown;
 Blocks.scrapWallGigantic.buildVisibility = BuildVisibility.shown;
 
-// I don't think a unit limit is needed
-Blocks.coreShard.unitCapModifier = 2147483647;
-Blocks.coreFoundation.unitCapModifier = 2147483647;
-Blocks.coreNucleus.unitCapModifier = 2147483647;
+// integer limit broke this for some reason, i am putting 99999 instead
+Blocks.coreShard.unitCapModifier = 99999;
+Blocks.coreFoundation.unitCapModifier = 99999;
+Blocks.coreNucleus.unitCapModifier = 99999;
 
 // Make the reconstructors instant and free
 Blocks.additiveReconstructor.constructTime = 0;
