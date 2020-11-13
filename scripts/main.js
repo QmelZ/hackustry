@@ -1,11 +1,6 @@
-// Activate the console
-Vars.enableConsole = true;
-
-// Run the other scripts
-require("content/unlock");
-require("content/blocks");
-require("content/turrets");
-require("content/cursed");
-
-// Enable infniteResources upon a map load
-Events.on(WorldLoadEvent, e => {Vars.state.rules.infiniteResources = true});
+Events.on(ClientLoadEvent, () => {
+    Vars.ui.showText(
+        "Hackustry has temporarily moved",
+        "While i figure some stuff out, i moved hackustry to my secondary repository, [accent]QmelZ/Hackustry-Old[]\nYou can download versions 1-3 from the repository mentioned above.\n[scarlet]Do not use the \"[#ff0000]Import from GitHub[]\" option.[]",
+    );
+});

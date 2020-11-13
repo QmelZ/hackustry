@@ -1,8 +1,8 @@
 {
-  "name": "hackustry",
+  "name": "hackustry-useless-release",
   "displayName": "Hackustry",
   "author": "QmelZ",
-  "description": "Hackustry v3: The world's first vanilla-compatible cheat mod for mindustry",
-  "version": "3.3.zip",
+  "description": "Hackustry is moved temporarily to my QmelZ/Hackustry-Old repository.",
+  "version": "Temp",
   "minGameVersion": 105,
 }
