@@ -1,20 +1,16 @@
-# Hackustry v3
-Hackustry v3: The world's first vanilla-compatible* cheat mod for mindustry
+# Temporarily moved
+While I work on some stuff, I decided to temporarily move hackustry.
 
-# Vanilla-Compatibility
+You can download versions 1-3 from my secondary repository, [QmelZ/Hackustry-Old](https://github.com/QmelZ/Hackustry-Old).
 
-Hackustry v3 does not add anything new, it just uses vanilla features to implement the cheats. Meaning that you can safely use a vanilla save with hackustry and a hackustry save with vanilla, without anything breaking or the game crashing.
+# Hackustry
+World's first cheat mod for mindustry.
 
 # For older releases:
-
 See [QmelZ/Hackustry-Old](https://github.com/QmelZ/Hackustry-Old)
 
 # Features
-
-- Adds:
-  - Nothing
-- Uses vanilla code to implement everything
-- Can be used without losing any data. (My testing, I am not responsible for any data lost.)
+- who even reads this
 
 # Special Thanks To
 [@DeltaNedas](https://github.com/DeltaNedas) for helping me with the actual mod making, coding part.
