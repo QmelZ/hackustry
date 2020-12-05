@@ -1,16 +1,8 @@
-# Temporarily moved
-While I work on some stuff, I decided to temporarily move hackustry.
-
-You can download versions 1-3 from my secondary repository, [QmelZ/Hackustry-Old](https://github.com/QmelZ/Hackustry-Old).
-
 # Hackustry
 World's first cheat mod for mindustry.
 
-# For older releases:
-See [QmelZ/Hackustry-Old](https://github.com/QmelZ/Hackustry-Old)
-
 # Features
-- who even reads this
+- i will list the features when v4 is out i promise h
 
 # Special Thanks To
 [@DeltaNedas](https://github.com/DeltaNedas) for helping me with the actual mod making, coding part.
