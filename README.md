@@ -1,5 +1,5 @@
 # Hackustry
-World's first cheat mod for mindustry.
+World's first "cheat"(no, not really a cheat mod anymore(yes, you can still cheat using this mod)) mod for mindustry.
 
 # Features
 - i will list the features when v4 is out i promise h
