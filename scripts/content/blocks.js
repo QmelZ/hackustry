@@ -29,3 +29,6 @@ Blocks.additiveReconstructor.consumes.items();
 Blocks.multiplicativeReconstructor.consumes.items();
 Blocks.exponentialReconstructor.consumes.items();
 Blocks.tetrativeReconstructor.consumes.items();
+
+// Fix power sources
+Blocks.powerSource.powerProduction = Number.MAX_VALUE
