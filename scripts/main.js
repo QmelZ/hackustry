@@ -6,3 +6,4 @@ require("content/unlock");
 require("content/blocks");
 require("content/turrets");
 require("content/cursed");
+require("content/godhoodexe");
