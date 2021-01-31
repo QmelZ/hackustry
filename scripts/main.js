@@ -5,4 +5,4 @@ Vars.enableConsole = true;
 require("content/unlock");
 require("content/blocks");
 require("content/turrets");
-require("content/cursed");
+// h require("content/cursed");
