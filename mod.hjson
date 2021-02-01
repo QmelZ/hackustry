@@ -1,0 +1,8 @@
+{
+  name: "hackustry",
+  displayName: "Hackustry",
+  author: "QmelZ",
+  description: "Hackustry v4",
+  version: 4,
+  minGameVersion: 120
+}
