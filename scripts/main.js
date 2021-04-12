@@ -5,4 +5,9 @@
 
 Vars.enableConsole = true;
 
-require("menu");
+const menu = require("menu");
+let dialog;
+Events.on(ClientLoadEvent, () => {
+    dialog = menu.setupDialog();
+    menu.addSettings(dialog);
+});
