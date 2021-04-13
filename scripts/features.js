@@ -1,7 +1,8 @@
 const toast = require("libs/toast");
-const annoying = require("annoying");
 
+// feature functions and enabling/disabling
 const features = {};
+let restart = false;
 
 const util = {
     features(){
@@ -18,8 +19,13 @@ const util = {
         let enabled = !Core.settings.getBool(name);
         Core.settings.put(name, enabled);
         features[name].func(enabled);
-        if(!enabled && !features[name].toggle){
-            annoying.start();
+        if(!features[name].toggle){
+            if(!restart && !enabled){
+                restart = true;
+                Core.scene.dialog.hidden(() => {
+                    toast(Icon.warning, "[red]some features need a game restart to be disabled[]");
+                });
+            }
         }
     }
 };
