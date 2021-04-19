@@ -90,7 +90,38 @@ add("cursed-mode", true, s => {
 });
 
 add("op-turrets", false, () => {
-    
+    Vars.content.blocks().each(e => {
+        if(e.minfo.mod) return;
+        if(!(e instanceof Turret)) return;
+        e.reloadTime = 0;
+        e.spread = 0;
+        e.inaccuracy = 0;
+        e.recoilAmount = 0;
+        e.restitution = 0;
+        e.xRand = 0;
+        e.cooldown = 10;
+        e.rotateSpeed = 2147483647;
+        e.targetGround = true;
+        e.targetAir = true;
+        
+        if(!(e instanceof PowerTurret)) return;
+        e.chargeTime = 144;
+        e.chargeMaxDelay = 0;
+        e.shootType.collidesGround = true;
+        e.shootType.collidesAir = true;
+        
+        if(!(e instanceof LaserTurret)) return;
+        e.range = 999;
+        e.shootDuration = 999;
+        e.shootType.length = 999;
+    });
+});
+
+add("unlock", false, () => {
+    Vars.content.each(e => {
+        if(!(e instanceof UnlockableContent)) return;
+        e.quietUnlock();
+    });
 });
 
 

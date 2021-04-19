@@ -22,6 +22,8 @@ function setupDialog(){
         add("unit-cap", "99999 unit cap for all cores");
         add("power-sources", "fix vanilla power sources");
         add("cursed-mode", "cursed mode");
+        add("op-turrets", "op turrets");
+        add("unlock", "unlock everything");
         
     }).growY().width(Core.graphics.getWidth()/3);
     
