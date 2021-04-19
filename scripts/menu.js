@@ -24,6 +24,7 @@ function setupDialog(){
         add("cursed-mode", "cursed mode");
         add("op-turrets", "op turrets");
         add("unlock", "unlock everything");
+        add("sandbox", "sandbox mode(for every world you join)");
         
     }).growY().width(Core.graphics.getWidth()/3);
     
@@ -52,4 +53,4 @@ function addSettings(dialog){
 module.exports = {
     setupDialog: setupDialog,
     addSettings: addSettings
-}
+};

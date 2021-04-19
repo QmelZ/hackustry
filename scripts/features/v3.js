@@ -30,15 +30,15 @@ module.exports = (add) => {
     });
     
     // fixes the built in power source to give infinite power
-    add("power-sources", true, s => {
-        Blocks.powerSource.powerProduction = s ? Infinity : 1000000 / 60;
+    add("power-sources", true, t => {
+        Blocks.powerSource.powerProduction = t ? Infinity : 1000000 / 60;
     });
     
-    add("cursed-mode", true, s => {
+    add("cursed-mode", true, t => {
         Vars.content.blocks().each(e => {
             if(e instanceof CoreBlock) return;
             
-            if(s){
+            if(t){
                 if(e.size <= 2) return;
                 e.size -= 2;
             }else{
@@ -88,5 +88,17 @@ module.exports = (add) => {
             if(!(e instanceof UnlockableContent)) return;
             e.alwaysUnlocked = true;
         });
+    });
+    
+    function infres(){
+        Vars.state.rules.infiniteResources = true;
+    }
+    add("sandbox", true, t => {
+        
+        if(t){
+            Events.on(WorldLoadEvent, infres);
+        }else{
+            Events.remove(WorldLoadEvent, infres);
+        }
     });
 };
