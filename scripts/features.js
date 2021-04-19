@@ -43,9 +43,13 @@ function add(name, toggle, func){
 }
 
 // visible all blocks
-// TODO(?) add something to make floors etc not visible
 add("build-visibility", false, () => {
     Vars.content.blocks().each(e => {
+        if(e instanceof Floor) return;
+        if(e instanceof Cliff) return;
+        if(e instanceof Boulder) return;
+        if(e instanceof StaticTree) return;
+        
         e.buildVisibility = BuildVisibility.shown;
     });
 });
@@ -54,7 +58,6 @@ add("build-visibility", false, () => {
 add("reconstructors", false, () => {
     Vars.content.blocks().each(e => {
         if(!(e instanceof Reconstructor)) return;
-        
         e.constructTime = 0;
         e.consumes.items();
     });
@@ -65,7 +68,6 @@ add("reconstructors", false, () => {
 add("unit-cap", false, () => {
     Vars.content.blocks().each(e => {
         if(!(e instanceof CoreBlock)) return;
-        
         e.unitCapModifier = 99999;
     });
 });
