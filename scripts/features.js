@@ -92,8 +92,15 @@ add("cursed-mode", true, s => {
 });
 
 add("op-turrets", false, () => {
+    Blocks.scorch.name = "Scorch v5";
+    Blocks.ripple.name = "Ripplag";
+    Blocks.lancer.name = "Lancerdown";
+    Blocks.meltdown.name = "Meltlong";
+    Blocks.foreshadow.name = "Foreshadop";
+    
     Vars.content.blocks().each(e => {
         if(e.minfo.mod) return;
+        
         if(!(e instanceof Turret)) return;
         e.reloadTime = 0;
         e.spread = 0;
