@@ -48,7 +48,7 @@ add("build-visibility", false, () => {
         if(e instanceof Floor) return;
         if(e instanceof Cliff) return;
         if(e instanceof Boulder) return;
-        if(e instanceof StaticTree) return;
+        if(e instanceof TreeBlock) return;
         
         e.buildVisibility = BuildVisibility.shown;
     });
