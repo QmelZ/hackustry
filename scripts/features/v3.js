@@ -90,11 +90,8 @@ module.exports = (add) => {
         });
     });
     
-    function infres(){
-        Vars.state.rules.infiniteResources = true;
-    }
+    function infres(){Vars.state.rules.infiniteResources = true;}
     add("sandbox", true, t => {
-        
         if(t){
             Events.on(WorldLoadEvent, infres);
         }else{

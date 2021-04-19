@@ -25,6 +25,7 @@ function setupDialog(){
         add("op-turrets", "op turrets");
         add("unlock", "unlock everything");
         add("sandbox", "sandbox mode(for every world you join)");
+        add("hackusated-conveyor", "hackusated conveyor");
         
     }).growY().width(Core.graphics.getWidth()/3);
     
