@@ -1,4 +1,4 @@
-const features = require("features");
+const features = require(modName + "/features/features");
 
 function setupDialog(){
     const dialog = new BaseDialog("Hackustry");

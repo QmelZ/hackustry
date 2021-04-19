@@ -5,7 +5,7 @@
 
 Vars.enableConsole = true;
 
-const menu = require("menu");
+const menu = require(modName + "/menu");
 let dialog;
 Events.on(ClientLoadEvent, () => {
     dialog = menu.setupDialog();
