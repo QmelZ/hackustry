@@ -33,7 +33,6 @@ function setupDialog(){
         add("cursed-mode", "cursed mode");
         add("op-turrets", "op turrets");
         add("unlock", "unlock everything");
-        add("sandbox", "sandbox mode(for every world you join)");
         add("hackusated-conveyor", "hackusated conveyor");
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
