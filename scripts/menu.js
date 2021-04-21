@@ -1,4 +1,9 @@
 const features = require(modName + "/features/features");
+let loadf = (name) => require(modName + "/features/v4/" + name);
+const menus = [
+    loadf("worldoptions"),
+    loadf("unlock")
+];
 
 function setupDialog(){
     const dialog = new BaseDialog("Hackustry");
@@ -7,6 +12,10 @@ function setupDialog(){
     // this is P A I N
     dialog.cont.center().pane(p => {
         p.defaults().height(36);
+        
+        menus[0](p, dialog);
+        p.row();
+        
         function add(name, displayName){
             if(!name || typeof name !== "string") return;
             if(!displayName || typeof displayName !== "string") displayName = name;
@@ -27,7 +36,7 @@ function setupDialog(){
         add("sandbox", "sandbox mode(for every world you join)");
         add("hackusated-conveyor", "hackusated conveyor");
         
-    }).growY().width(Core.graphics.getWidth()/3);
+    }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
     dialog.buttons.button("Disable all features", () => {
         const flist = features.features();
@@ -40,11 +49,10 @@ function setupDialog(){
     return dialog;
 }
 
-
 function addSettings(dialog){
     Vars.ui.settings.shown(() => {
         Vars.ui.settings.children.get(1).children.get(0).children.get(0).row();
-        Vars.ui.settings.children.get(1).children.get(0).children.get(0).button("Hackustry", () => {
+        Vars.ui.settings.children.get(1).children.get(0).children.get(0).button("Hackustry", Styles.cleart, () => {
             dialog.show();
             Vars.ui.settings.hide();
         });
