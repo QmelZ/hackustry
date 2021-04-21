@@ -35,7 +35,6 @@ function setupDialog(){
         add("power-sources", "fix vanilla power sources");
         add("cursed-mode", "cursed mode");
         add("op-turrets", "op turrets");
-        add("unlock", "unlock everything");
         add("hackusated-conveyor", "hackusated conveyor");
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);

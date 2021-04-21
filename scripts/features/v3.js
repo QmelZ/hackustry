@@ -82,11 +82,4 @@ module.exports = (add) => {
             e.shootType.length = 999;
         });
     });
-    
-    add("unlock", false, () => {
-        Vars.content.each(e => {
-            if(!(e instanceof UnlockableContent)) return;
-            e.alwaysUnlocked = true;
-        });
-    });
 };
