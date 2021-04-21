@@ -13,7 +13,10 @@ function setupDialog(){
     dialog.cont.center().pane(p => {
         p.defaults().height(36);
         
-        menus[0](p, dialog);
+        p.table(cons(t => {
+            menus[0](t, dialog);
+            menus[1](t, dialog);
+        })).height(36);
         p.row();
         
         function add(name, displayName){

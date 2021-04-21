@@ -46,5 +46,5 @@ module.exports = (p, dialog) => {
             if(Vars.net.client()) return true;
             return false;
         });
-    }).width(210);
+    }).left().width(210);
 };
