@@ -2,7 +2,7 @@ const features = require(modName + "/features/features");
 let loadf = (name) => require(modName + "/features/v4/" + name);
 const menus = [
     loadf("worldoptions"),
-    loadf("unlock")
+    loadf("content"),
 ];
 
 function setupDialog(){
@@ -46,6 +46,8 @@ function setupDialog(){
         }
         Core.app.exit();
     }).size(210, 64);
+    
+    if(Vars.mobile) dialog.buttons.button(Icon.terminal, () => Vars.ui.scriptfrag.toggle()).size(64);
     
     return dialog;
 }
