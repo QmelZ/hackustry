@@ -31,6 +31,18 @@ function worldoptions(){
         check("enemy lights", "enemyLights");
         check("core incinerates", "coreIncinerates");
         
+        p.table(cons(t => {
+            t.label(() => "unit cap:");
+            t.field(Vars.state.rules.unitCap, TextField.TextFieldFilter.digitsOnly, s => {
+                if(s === "") return;
+                if(parseInt(s) > Integer.MAX_VALUE) return;
+                
+                Vars.state.rules.unitCapVariable = parseInt(s) === 0;
+                Vars.state.rules.unitCap = parseInt(s);
+            });
+        }));
+        p.row();
+        
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
     dialog.show();

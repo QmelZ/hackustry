@@ -103,6 +103,7 @@ function content(){
         
         let c = more.cont;
         c.defaults().size(210, 64);
+        
         c.button("unlock all", () => {
             Vars.content.each(e => {
                 if(!(e instanceof UnlockableContent)) return;
@@ -111,6 +112,7 @@ function content(){
             more.hide();
         });
         c.row();
+        
         c.button("temporarily unlock all", () => {
             Vars.content.each(e => {
                 if(!(e instanceof UnlockableContent)) return;
@@ -119,6 +121,7 @@ function content(){
             more.hide();
         });
         c.row();
+        
         c.button("lock all", () => {
             Vars.content.each(e => {
                 if(!(e instanceof UnlockableContent)) return;
@@ -126,6 +129,24 @@ function content(){
             });
             more.hide();
         });
+        c.row();
+        
+        c.button("build visibility\n(all blocks)", Icon.eye, () => {
+            const bv = new BaseDialog("build visibility");
+            bv.addCloseButton();
+            
+            Object.keys(BuildVisibility).forEach(b => {
+                if(BuildVisibility[b] instanceof Function) return;
+                bv.cont.button(b, () => {
+                    Vars.content.blocks().each(e => e.buildVisibility = BuildVisibility[b]);
+                    bv.hide();
+                }).size(210, 64);
+                bv.cont.row();
+            });
+            
+            bv.show();
+        });
+        c.row();
        
         more.show();
     });

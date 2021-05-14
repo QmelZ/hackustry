@@ -16,7 +16,7 @@ function setupDialog(){
         p.table(cons(t => {
             menus[0](t, dialog);
             menus[1](t, dialog);
-        })).height(36);
+        }));
         p.row();
         
         function add(name, displayName){
