@@ -1,15 +1,4 @@
 module.exports = (add) => {
-    // visible all blocks
-    add("build-visibility", false, () => {
-        Vars.content.blocks().each(e => {
-            if(e instanceof Floor) return;
-            if(e instanceof Cliff) return;
-            if(e instanceof Boulder) return;
-            if(e instanceof TreeBlock) return;
-            
-            e.buildVisibility = BuildVisibility.shown;
-        });
-    });
     
     // reconstructors take no items and instant
     add("reconstructors", false, () => {
@@ -17,15 +6,6 @@ module.exports = (add) => {
             if(!(e instanceof Reconstructor)) return;
             e.constructTime = 0;
             e.consumes.items();
-        });
-    });
-    
-    // increase unit cap
-    // this broke stuff when i tried to use integer limit in v3, so 99999 it is
-    add("unit-cap", false, () => {
-        Vars.content.blocks().each(e => {
-            if(!(e instanceof CoreBlock)) return;
-            e.unitCapModifier = 99999;
         });
     });
     
