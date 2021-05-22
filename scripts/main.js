@@ -6,9 +6,9 @@
 Vars.enableConsole = true;
 
 if(Vars.headless){
-    throw "hackustry wont work on a server you egg";
+    throw "no server support yet";
 }else{
-    const menu = require(modName + "/menu");
+const menu = require(modName + "/menu");
     let dialog;
     Events.on(ClientLoadEvent, () => {
         dialog = menu.setupDialog();

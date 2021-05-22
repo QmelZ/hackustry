@@ -31,8 +31,8 @@ const wall = extend(Wall, "hackusated-wall", {
     category: Category.defense,
     buildVisibility: BuildVisibility.hidden,
     inEditor: false,
-    
     size: 1,
+    
     health: Integer.MAX_VALUE
 });
 wall.buildType = () => extend(Wall.WallBuild, wall, wallbuild);
@@ -42,8 +42,8 @@ const largewall = extend(Wall, "hackusated-wall-large", {
     category: Category.defense,
     buildVisibility: BuildVisibility.hidden,
     inEditor: false,
-    
     size: 2,
+    
     health: Integer.MAX_VALUE
 });
 largewall.buildType = () => extend(Wall.WallBuild, largewall, wallbuild);
@@ -54,8 +54,7 @@ const mender = extend(MendProjector, "hackusated-mender", {
     category: Category.effect,
     buildVisibility: BuildVisibility.hidden,
     inEditor: false,
-    
-    size: 2
+    size: 2    
 });
 
 const od = extend(OverdriveProjector, "hackusated-overdrive", {
@@ -63,7 +62,6 @@ const od = extend(OverdriveProjector, "hackusated-overdrive", {
     category: Category.effect,
     buildVisibility: BuildVisibility.hidden,
     inEditor: false,
-    
     size: 2
 });
 */

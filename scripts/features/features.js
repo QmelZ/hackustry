@@ -1,4 +1,4 @@
-const toast = require(modName + "/libs/toast");
+const toast = Vars.headless ? () => {} : require(modName + "/libs/toast");
 
 // feature functions and enabling/disabling
 const features = {};
@@ -22,9 +22,13 @@ const util = {
         if(!features[name].toggle){
             if(!restart && !enabled){
                 restart = true;
-                Core.scene.dialog.hidden(() => {
-                    toast(Icon.warning, "[red]some features need a game restart to be disabled[]");
-                });
+                if(Vars.headless){
+                    Log.warn("[red]this feature needs a game restart to be disabled[]");
+                }else{
+                    Core.scene.dialog.hidden(() => {
+                        toast(Icon.warning, "[red]some features need a game restart to be disabled[]");
+                    });
+                }
             }
         }
     }
@@ -49,6 +53,7 @@ function load(f){
 load("v1");
 load("v2");
 load("v3");
+load("v4");
 
 
 // if the feature is on it should stay on

@@ -3,6 +3,7 @@ let loadf = (name) => require(modName + "/features/v4/" + name);
 const menus = [
     loadf("worldoptions"),
     loadf("content"),
+    loadf("transform"),
 ];
 
 function setupDialog(){
@@ -14,8 +15,7 @@ function setupDialog(){
         p.defaults().height(36);
         
         p.table(cons(t => {
-            menus[0](t, dialog);
-            menus[1](t, dialog);
+            menus.forEach(e => e.call(null, t, dialog));
         }));
         p.row();
         
@@ -36,6 +36,8 @@ function setupDialog(){
         add("cursed-mode", "cursed mode");
         add("op-turrets", "op turrets");
         add("hackusated-conveyor", "hackusated conveyor");
+        add("hackusated-walls", "hackusated walls");
+        add("unit-factory", "unit factory")
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
