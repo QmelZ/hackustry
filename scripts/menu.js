@@ -41,7 +41,7 @@ function setupDialog(){
         add("op-turrets", "op turrets");
         add("hackusated-conveyor", "hackusated conveyor");
         add("hackusated-walls", "hackusated walls");
-        add("unit-factory", "unit factory")
+        add("unit-factory", "unit factory");
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     

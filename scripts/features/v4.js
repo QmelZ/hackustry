@@ -15,23 +15,20 @@ Events.on(ContentInitEvent, () => {
 });
 
 factory.buildType = () => extend(UnitFactory.UnitFactoryBuild, factory, {
-    spawn: false,
+    shouldSpawn: false,
+    _unit: null,
     updateTile(){
         if(this.spawn){
             this.spawn = false;
-            this.super$updateTile();
+            
         }
     },
     buildConfiguration(table){
-        let units = this.block.plans.copy().map(e => e.unit);
-        ItemSelection.buildTable(
-            table, units,
-            () => this.currentPlan === -1 ? null : this.block.plans.get(currentPlan).unit,
-            unit => this.configure(new Integer(this.block.plans.indexOf(u => u.unit === unit)))
-        );
-        
-        table.row();
-        table.button("spawn", Styles.cleart, () => this.spawn = true).size(160, 40);
+        let i = 0;
+        Vars.content.units().each(e => {
+            table.button(new TextureRegionDrawable(e.icon(Cicon.large)), () => {});
+            if(!(++i % 4)) table.row();
+        });
     }
 });
 
