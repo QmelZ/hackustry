@@ -1,4 +1,6 @@
 const features = require(modName + "/features/features");
+let toast = require(modName + "/libs/toast");
+
 let loadf = (name) => require(modName + "/features/v4/" + name);
 const menus = [
     loadf("worldoptions"),
@@ -45,17 +47,44 @@ function setupDialog(){
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
-    dialog.buttons.button("Disable all features", () => {
-        const flist = features.features();
-        for(let f in flist){
-            if(features.get(f)) features.runf(f);
-        }
-        Core.app.exit();
-    }).size(210, 64);
+    dialog.buttons.button("more", Icon.add, () => more()).size(210, 64);
     
     if(Vars.mobile) dialog.buttons.button(Icon.terminal, () => Vars.ui.scriptfrag.toggle()).size(64);
     
     return dialog;
+}
+
+function more(){
+    const dialog = new BaseDialog("more");
+    dialog.addCloseButton();
+    
+    dialog.cont.center().pane(p => {
+        p.defaults().size(210, 64);
+        
+        p.button("Disable all features", Icon.cancel, () => {
+            const flist = features.features();
+            for(let f in flist){
+                if(features.get(f)) features.runf(f);
+            }
+            Vars.ui.showInfo("The game will now close to disable all features");
+            Core.scene.dialog.hidden(() => Core.app.exit());
+        });
+        p.row();
+        
+        let no = () => toast(Icon.info, "not yet implemented");
+        
+        p.button("Export settings as json", () => no());
+        p.row();
+        
+        p.button("Import settings as json", () => no());
+        p.row();
+        
+        p.button("Accounts", Icon.players, () => no());
+        p.row();
+        
+    }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
+    
+    dialog.show();
 }
 
 function addSettings(dialog){
