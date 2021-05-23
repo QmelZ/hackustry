@@ -15,9 +15,15 @@ function setupDialog(){
         p.defaults().height(36);
         
         p.table(cons(t => {
-            menus.forEach(e => e.call(null, t, dialog));
-        }));
+            menus[0](t, dialog);
+            menus[1](t, dialog);
+        })).height(48);
         p.row();
+        p.table(cons(t => {
+            menus[2](t, dialog);
+        })).height(48);
+        p.row();
+        
         
         function add(name, displayName){
             if(!name || typeof name !== "string") return;
@@ -29,9 +35,7 @@ function setupDialog(){
             p.row();
         }
         
-        add("build-visibility", "make all blocks visible");
         add("reconstructors", "make reconstructors cost nothing and instant");
-        add("unit-cap", "99999 unit cap for all cores");
         add("power-sources", "fix vanilla power sources");
         add("cursed-mode", "cursed mode");
         add("op-turrets", "op turrets");
