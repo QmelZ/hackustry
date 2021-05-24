@@ -30,6 +30,7 @@ function rpc(){
     }catch(c){}
 }
 
+// ignore the above comment this is worse
 function title(){
     function getGameStatus(){
         if(Vars.state.isGame()){
@@ -63,7 +64,7 @@ function title(){
             }
             case "In Launch Selection": {
                 let p = Vars.ui.planet;
-                if(!p.selected) return "None";
+                if(!p.selected) return "No Sector Selected";
                 if(p.selected.preset) return p.selected.preset.localizedName;
                 return p.selected.planet.localizedName + " Sector " + p.selected.id;
             }
