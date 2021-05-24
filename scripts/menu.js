@@ -43,6 +43,7 @@ function setupDialog(){
         add("op-turrets", "op turrets");
         add("hackusated-conveyor", "hackusated conveyor");
         add("hackusated-walls", "hackusated walls");
+        add("launch-anywhere", "launch anywhere");
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
