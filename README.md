@@ -32,7 +32,7 @@ At this point this mod isn't really a cheat mod anymore. it has became a large t
 - Account System
     * Save names and UUID to quickly swap between
     * Possibly save unlocks/saves/features
-    * In progress
+    * In progress (probably will be in the groovy version)
 - Unit Factory
     * basically a payload source
     * gave me headaches
@@ -42,6 +42,10 @@ At this point this mod isn't really a cheat mod anymore. it has became a large t
     * will improve code quality
     * will also fix the code being too messy
     * groovy closures are amazing
+- Add Bundle Support
+    * translatable cheats wow
+    * i mean it would help
+    * most likely with the groovy version
 
 ## Credits
 * Some people who helped me with the code while making the large v4 update:
