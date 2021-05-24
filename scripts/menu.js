@@ -17,12 +17,12 @@ function setupDialog(){
         p.defaults().height(36);
         
         p.table(cons(t => {
-            menus[0](t, dialog);
-            menus[1](t, dialog);
+            menus[0](t);
+            menus[1](t);
         })).height(48);
         p.row();
         p.table(cons(t => {
-            menus[2](t, dialog);
+            menus[2](t);
         })).height(48);
         p.row();
         
@@ -43,7 +43,6 @@ function setupDialog(){
         add("op-turrets", "op turrets");
         add("hackusated-conveyor", "hackusated conveyor");
         add("hackusated-walls", "hackusated walls");
-        add("unit-factory", "unit factory");
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
@@ -55,7 +54,7 @@ function setupDialog(){
 }
 
 function more(){
-    const dialog = new BaseDialog("more");
+    const dialog = new BaseDialog("More");
     dialog.addCloseButton();
     
     dialog.cont.center().pane(p => {
@@ -71,20 +70,106 @@ function more(){
         });
         p.row();
         
-        let no = () => toast(Icon.info, "not yet implemented");
-        
-        p.button("Export settings as json", () => no());
+        p.button("Import/Export", () => {
+            const dialog = new BaseDialog("import/export");
+            dialog.addCloseButton();
+            
+            dialog.cont.center().pane(pane => {
+                pane.defaults().size(210, 64);
+                
+                let includeContent = false;
+                
+                pane.check("include content", false, b => includeContent = b);
+                pane.row();
+                
+                pane.button("Import", () => data(false, includeContent));
+                pane.row();
+                
+                pane.button("Export", () => data(true, includeContent));
+                pane.row();
+                
+            }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
+            
+            dialog.show();
+        });
         p.row();
         
-        p.button("Import settings as json", () => no());
-        p.row();
-        
-        p.button("Accounts", Icon.players, () => no());
+        p.button("Accounts", Icon.players, () => toast(Icon.info, "not yet implemented"));
         p.row();
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
     dialog.show();
+}
+
+function data(isExport, unlocks){
+    if(typeof isExport !== "boolean") return;
+    if(typeof unlocks !== "boolean") return;
+    
+    if(isExport){
+        Vars.ui.loadfrag.show();
+        
+        let obj = {
+            features: {},
+            content: {}
+        };
+        
+        for(let f in features.features()){
+            obj.features[f] = features.get(f);
+        }
+        
+        if(unlocks){
+            Vars.content.each(e => {
+                if(!(e instanceof UnlockableContent)) return;
+                
+                obj.content[e.name] = [e.alwaysUnlocked, e.unlockedNow()];
+            });
+        }
+        
+        let json = JSON.stringify(obj, null, 4);
+        
+        Vars.ui.loadfrag.hide();
+        
+        writeFile("export config", "json", json);
+    }else{
+        readFile("import config", "json", json => {
+            Vars.ui.loadfrag.show();
+            
+            let obj;
+            try{
+                obj = JSON.parse(json);
+            }catch(c){
+                Vars.ui.loadfrag.hide();
+                Vars.ui.showErrorMessage("failed to parse json file");
+                return;
+            }
+            
+            let proto = (e) => Object.getPrototypeOf(e);
+            if(proto(obj.features) !== proto({}) || proto(obj.content) !== proto({})){
+                Vars.ui.loadfrag.hide();
+                Vars.ui.showErrorMessage("not a valid hackustry config");
+                return;
+            }
+            
+            for(let f in obj.features){
+                if(obj.features[f] === features.get(f)) continue;
+                features.runf(f);
+            }
+            
+            if(unlocks){
+                Vars.content.each(e => {
+                    if(!(e instanceof UnlockableContent)) return;
+                    if(obj.content[e.name] === undefined) return;
+                    
+                    e.alwaysUnlocked = obj.content[e.name][0];
+                    obj.content[e.name][1] ? e.quietUnlock() : e.clearUnlock();
+                });
+            }
+            
+            Vars.ui.loadfrag.hide();
+            toast(Icon.check, "import successful");
+        });
+    }
 }
 
 function addSettings(dialog){

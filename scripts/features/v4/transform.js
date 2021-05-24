@@ -30,10 +30,9 @@ function transform(){
     dialog.show();
 }
 
-module.exports = (p, dialog) => {
+module.exports = (p) => {
     p.button("transform", () => {
         transform();
-        dialog.hide();
     }).self(s => {
         s.get().setDisabled(() => {
             if(Vars.state.is(GameState.State.menu)) return true;

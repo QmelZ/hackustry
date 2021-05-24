@@ -154,9 +154,8 @@ function content(){
     dialog.show();
 }
 
-module.exports = (p, dialog) => {
+module.exports = (p) => {
     p.button("content", () => {
         content();
-        dialog.hide();
     }).left().width(210);
 };
