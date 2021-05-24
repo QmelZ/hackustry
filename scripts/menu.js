@@ -72,7 +72,7 @@ function more(){
         p.row();
         
         p.button("Import/Export", () => {
-            const dialog = new BaseDialog("import/export");
+            const dialog = new BaseDialog("Import/Export");
             dialog.addCloseButton();
             
             dialog.cont.center().pane(pane => {
@@ -95,7 +95,7 @@ function more(){
         });
         p.row();
         
-        p.button("Accounts", Icon.players, () => toast(Icon.info, "not yet implemented"));
+        p.button("Accounts", Icon.players, () => toast(Icon.info, "not implemented yet"));
         p.row();
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
@@ -171,6 +171,57 @@ function data(isExport, unlocks){
             toast(Icon.check, "import successful");
         });
     }
+}
+
+importPackage(Packages.arc.util.serialization);
+function randomUUID(){
+    try{
+        let number = parseInt(Mathf.random(99999999)).toString();
+        number = "0".repeat(8 - number.length) + number;
+        
+        return Base64Coder.encodeString(number);
+    }catch(c){
+        return randomUUID();
+    }
+}
+
+function isValid(uuid){
+    if(uuid.match(/^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/)) return true;
+    return false;
+}
+
+function accounts(){
+    let accArray = [].concat(
+        Core.settings.getJson(
+            modName + ".account-list",
+            Class.forName("[Ljava.lang.Object;"),
+            () => [{name: Core.settings.getString("name"), uuid: Core.settings.getString("uuid")}]
+        )
+    );
+    
+    const dialog = new BaseDialog("Accounts");
+    dialog.addCloseButton();
+    
+    dialog.cont.center().pane(p => {
+        p.defaults().size(210, 64);
+        
+        accArray.forEach(e => {
+            p.button(e.name, () => {
+                Core.settings.put("name", e.name);
+                Core.settings.put("uuid", e.uuid);
+            }).self(s => s.get().setDisabled(() => Core.settings.getString("uuid") === e.uuid));
+            p.row();
+        });
+        
+    }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
+    
+    dialog.buttons.button("Add Account", Icon.add, () => {
+        
+    });
+    
+    dialog.hidden(() => Core.settings.putJson(modName + ".account-list", accArray));
+    
+    dialog.show();
 }
 
 function addSettings(dialog){
