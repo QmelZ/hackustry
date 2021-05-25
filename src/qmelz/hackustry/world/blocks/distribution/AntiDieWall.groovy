@@ -1,8 +1,9 @@
-package qmelz.hackustry.world.blocks.distribution;
+package qmelz.hackustry.world.blocks.distribution
 
-import mindustry.gen.*;
-import mindustry.world.blocks.defense.*;
-import mindustry.world.meta.*;
+import mindustry.gen.Bullet
+import mindustry.world.blocks.defense.Wall
+import mindustry.world.meta.BuildVisibility
+
 
 class AntiDieWall extends Wall{
     def health = Integer.MAX_VALUE;
@@ -19,7 +20,7 @@ class AntiDieWall extends Wall{
             super.updateTile();
             this.health = this.maxHealth;
         }
-    
+        
         @Override
         boolean collision(Bullet bullet){
             return true;
@@ -29,27 +30,27 @@ class AntiDieWall extends Wall{
             this.dead = false;
             this.health = this.maxHealth;
         }
-    
+        
         @Override
         void kill(){
             this.no();
         }
-    
+        
         @Override
         void killed(){
             this.no();
         }
-    
+        
         @Override
         void remove(){
             this.no();
         }
-    
+        
         @Override
         void damage(float damage){
             this.no();
         }
-    
+        
         @Override
         void damage(float amount, boolean withEffect){
             this.no();

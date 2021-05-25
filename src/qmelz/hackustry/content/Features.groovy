@@ -1,17 +1,20 @@
-package qmelz.hackustry.core;
+package qmelz.hackustry.content
 
-import mindustry.*;
-import mindustry.content.*;
-import mindustry.ctype.*;
-import mindustry.entities.bullet.*;
-import mindustry.ui.dialogs.*;
-import mindustry.world.blocks.defense.turrets.*;
-import mindustry.world.blocks.sandbox.*;
-import mindustry.world.blocks.storage.*;
-import mindustry.world.blocks.units.*;
-import mindustry.world.meta.*;
-import qmelz.hackustry.content.*;
-import qmelz.hackustry.types.*;
+import arc.Core
+import mindustry.Vars
+import mindustry.ctype.ContentList
+import mindustry.entities.bullet.LaserBulletType
+import mindustry.gen.Icon
+import mindustry.ui.dialogs.PlanetDialog
+import mindustry.world.blocks.defense.turrets.LaserTurret
+import mindustry.world.blocks.defense.turrets.PowerTurret
+import mindustry.world.blocks.defense.turrets.Turret
+import mindustry.world.blocks.sandbox.PowerSource
+import mindustry.world.blocks.storage.CoreBlock
+import mindustry.world.blocks.units.Reconstructor
+import mindustry.world.meta.BuildVisibility
+import qmelz.hackustry.types.Feature
+import qmelz.hackustry.ui.HackustryUI
 
 
 class Features implements ContentList{
@@ -96,5 +99,35 @@ class Features implements ContentList{
             PlanetDialog.debugSelect = it;
             Vars.content.sectors().each{e -> e.alwaysUnlocked = it}
         });
+    }
+    
+    // feature management stuff
+    
+    static def features;
+    
+    static{
+        features = this.declaredFields.findAll{!it.synthetic && it !== features}*.asType(Feature);
+        
+        features.each{
+            Core.settings.defaults(it.internalName, true);
+            
+            if(get(it)) toggle(it);
+        }
+    }
+    
+    static def get(Feature f){
+        return Core.settings.getBool(f.internalName);
+    }
+    
+    static void toggle(Feature f){
+        def nextState = !get(f);
+        Core.settings.put(f.internalName, nextState);
+        f.function.call(nextState);
+        checkRestart(f);
+    }
+    
+    static void checkRestart(Feature f){
+        if(f.toggleable) return;
+        HackustryUI.showToast(Icon.warning, Core.bundle.get("hackustry.toast.needs-restart"));
     }
 }

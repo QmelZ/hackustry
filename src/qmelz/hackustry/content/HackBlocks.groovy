@@ -1,10 +1,9 @@
-package qmelz.hackustry.content;
+package qmelz.hackustry.content
 
-import mindustry.ctype.*;
-import mindustry.type.*;
-import mindustry.world.blocks.distribution.*;
-import mindustry.world.meta.*;
-import qmelz.hackustry.world.blocks.distribution.*;
+import mindustry.ctype.ContentList
+import mindustry.world.blocks.distribution.Conveyor
+import mindustry.world.meta.BuildVisibility
+import qmelz.hackustry.world.blocks.distribution.AntiDieWall
 
 
 class HackBlocks implements ContentList{

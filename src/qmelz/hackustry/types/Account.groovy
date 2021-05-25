@@ -1,9 +1,10 @@
-package qmelz.hackustry.types;
+package qmelz.hackustry.types
 
-import groovy.transform.*;
+import groovy.transform.Canonical
 
 
-@Canonical class Account{
+@Canonical
+class Account{
     String name;
     String uuid;
 }

@@ -1,8 +1,8 @@
-package qmelz.hackustry;
+package qmelz.hackustry
 
-import mindustry.mod.*;
-import qmelz.hackustry.content.*;
-import qmelz.hackustry.core.*;
+import mindustry.mod.Mod
+import qmelz.hackustry.content.HackBlocks
+import qmelz.hackustry.content.Features
 
 
 class Hackustry extends Mod{

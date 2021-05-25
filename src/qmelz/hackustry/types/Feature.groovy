@@ -1,15 +1,19 @@
 package qmelz.hackustry.types
 
-import arc.*;
-import groovy.transform.*;
+import arc.Core
+import groovy.transform.Canonical
 
 
-@Canonical(excludes = "displayName")
+@Canonical(excludes = ["internalName", "displayName"])
 class Feature{
     String name;
+    String internalName;
     String displayName;
     boolean toggleable;
     Closure function;
     
-    {displayName = Core.bundle.get("hackustry.feature.$name")}
+    {
+        this.internalName = "hackustry.feature.$name";
+        this.displayName = Core.bundle.get(internalName);
+    }
 }
