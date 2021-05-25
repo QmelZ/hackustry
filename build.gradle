@@ -1,0 +1,56 @@
+plugins{id "groovy"}
+
+sourceCompatibility = 1.8;
+
+sourceSets.main{
+    groovy.srcDir("$sourceDir/");
+    resources.srcDir("$resourceDir/");
+}
+
+repositories{
+    mavenCentral();
+    maven{
+        url("https://jitpack.io");
+    }
+}
+
+dependencies{
+    api("org.codehaus.groovy:groovy-all:3.0.8");
+    compileOnly("com.github.Anuken.Mindustry:core:$mindustryVersion");
+}
+
+jar{
+    archiveFileName.set("${jarName}.jar");
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
+    
+    from{
+        configurations.compileClasspath.collect{
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+task dexify(type: Jar){
+    archiveFileName.set("dexed-${jarName}.jar");
+
+    final File jarArtifact = new File(tasks.jar.archiveFile.get().asFile.parent, "${jarName}.jar");
+    final File dexedArtifact = new File(tasks.dexify.getTemporaryDir(), "dexed.jar");
+    
+    doFirst{
+        exec{
+            workingDir(dexedArtifact.parent);
+            
+            def command = ["d8", "--min-api", androidMinApiLevel, "--output", dexedArtifact, jarArtifact];
+            if(System.getProperty("os.name").toLowerCase(Locale.ROOT).contains("windows")){
+                commandLine("cmd", "/c", *command);
+            }else{
+                commandLine(*command);
+            }
+
+        }
+    }
+
+    from(zipTree(jarArtifact), zipTree(dexedArtifact));
+}
+
+task buildDex dependsOn "build", "dexify"
