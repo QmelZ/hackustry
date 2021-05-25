@@ -15,7 +15,7 @@ repositories{
 }
 
 dependencies{
-    api("org.codehaus.groovy:groovy-all:3.0.8");
+    compileOnly("org.codehaus.groovy:groovy-all:3.0.8");
     compileOnly("com.github.Anuken.Mindustry:core:$mindustryVersion");
 }
 
