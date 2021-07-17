@@ -2,7 +2,7 @@
 First Mindustry cheat mod ever made.
 
 ### Some clarifications
-At this point this mod isn't really a cheat mod anymore. it has became a large testing and utility mod (with a messy codebase). you still can cheat using it, and cheating isn't always bad, and it was known as *the* cheat mod before which is the reason i'm labeling it "cheat mod" here. also i'll port this mod to [groovy](https://groovy-lang.org/) because javascript will be getting limited again in mindustry 7.0.
+At this point this mod isn't really a cheat mod anymore. it has became a large testing and utility mod (with a messy codebase). you still can cheat using it, and cheating isn't always bad, and it was known as *the* cheat mod before which is the reason i'm labeling it "cheat mod" here. also i'll port this mod to [groovy](https://groovy-lang.org/) because ~~javascript will be getting limited again in mindustry 7.0.~~ i feel like it. (also js got unlimited again)
 
 ## Features
 ### Finished
@@ -34,9 +34,7 @@ At this point this mod isn't really a cheat mod anymore. it has became a large t
     * Possibly save unlocks/saves/features
     * In progress (probably will be in the groovy version)
 - Unit Factory
-    * basically a payload source
-    * gave me headaches
-    * might not happen idk
+    * no, already added in v7
 - Port to Groovy
     * in progress (definitely happening)
     * will improve code quality
