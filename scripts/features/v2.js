@@ -26,27 +26,31 @@ const wallbuild = {
     }
 };
 
-const wall = extend(Wall, "hackusated-wall", {
-    localizedName: "Hackusated Wall",
-    category: Category.defense,
-    buildVisibility: BuildVisibility.hidden,
-    inEditor: false,
-    size: 1,
-    
-    health: Integer.MAX_VALUE
-});
-wall.buildType = () => extend(Wall.WallBuild, wall, wallbuild);
+let wall, largewall;
 
-const largewall = extend(Wall, "hackusated-wall-large", {
-    localizedName: "Large Hackusated Wall",
-    category: Category.defense,
-    buildVisibility: BuildVisibility.hidden,
-    inEditor: false,
-    size: 2,
-    
-    health: Integer.MAX_VALUE
+Events.on(ContentInitEvent, () => {
+    wall = extend(Wall, "hackusated-wall", {
+        localizedName: "Hackusated Wall",
+        category: Category.defense,
+        buildVisibility: BuildVisibility.hidden,
+        inEditor: false,
+        size: 1,
+        
+        health: Integer.MAX_VALUE
+    });
+    wall.buildType = () => extend(Wall.WallBuild, wall, wallbuild);
+
+    largewall = extend(Wall, "hackusated-wall-large", {
+        localizedName: "Large Hackusated Wall",
+        category: Category.defense,
+        buildVisibility: BuildVisibility.hidden,
+        inEditor: false,
+        size: 2,
+        
+        health: Integer.MAX_VALUE
+    });
+    largewall.buildType = () => extend(Wall.WallBuild, largewall, wallbuild);
 });
-largewall.buildType = () => extend(Wall.WallBuild, largewall, wallbuild);
 
 /*
 const mender = extend(MendProjector, "hackusated-mender", {
