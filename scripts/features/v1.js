@@ -11,6 +11,8 @@ Events.on(ContentInitEvent, () => {
         speed: 99999,
         alwaysUnlocked: true
     });
+    
+    hconv.init();
 });
 
 module.exports = (add) => {
