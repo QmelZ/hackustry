@@ -50,6 +50,9 @@ Events.on(ContentInitEvent, () => {
         health: Integer.MAX_VALUE
     });
     largewall.buildType = () => extend(Wall.WallBuild, largewall, wallbuild);
+    
+    wall.init();
+    largewall.init();
 });
 
 /*
