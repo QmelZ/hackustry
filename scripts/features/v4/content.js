@@ -10,13 +10,15 @@ function content(){
         let i = 0;
         Vars.content.each(e => {
             if(!(e instanceof UnlockableContent)) return;
-            p.button(e.localizedName, new TextureRegionDrawable(e.icon(Cicon.medium)), () => {
+            p.button(e.localizedName,
+		     //new TextureRegionDrawable(e.icon(Cicon.medium)),
+		     () => {
                 const content = new BaseDialog(e.name);
                 content.addCloseButton();
                 
                 let c = content.cont;
                 c.defaults().center();
-                c.image(e.icon(Cicon.full));
+                //c.image(e.icon(Cicon.full));
                 c.row();
                 c.label(() => {
                     let n = e.class.name.includes("$") ? e.class.superclass.name : e.class.name;

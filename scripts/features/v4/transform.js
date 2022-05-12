@@ -17,7 +17,9 @@ function transform(){
         Vars.content.units().each(e => {
             if(e === UnitTypes.block) return;
             
-            p.button(e.localizedName, new TextureRegionDrawable(e.icon(Cicon.medium)), () => {
+            p.button(e.localizedName,
+		     //new TextureRegionDrawable(e.icon(Cicon.medium)),
+		     () => {
                 become(e);
                 dialog.hide();
             });

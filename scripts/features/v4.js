@@ -5,4 +5,8 @@ module.exports = (add) => {
         PlanetDialog.debugSelect = t;
         Vars.content.sectors().each(e => e.alwaysUnlocked = t);
     });
+
+    add("unit-anywhere", false, () => {
+	Vars.content.units().each(e => e.envDisabled = Env.none);
+    });
 };

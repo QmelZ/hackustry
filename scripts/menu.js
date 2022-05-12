@@ -44,6 +44,7 @@ function setupDialog(){
         add("hackusated-conveyor", "hackusated conveyor");
         add("hackusated-walls", "hackusated walls");
         add("launch-anywhere", "launch anywhere");
+	add("unit-anywhere", "unit anywhere");
         
     }).growY().width(Vars.mobile ? Core.graphics.getWidth() : Core.graphics.getWidth()/3);
     
