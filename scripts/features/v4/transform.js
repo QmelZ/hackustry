@@ -18,7 +18,7 @@ function transform(){
             if(e === UnitTypes.block) return;
             
             p.button(e.localizedName,
-		     //new TextureRegionDrawable(e.icon(Cicon.medium)),
+		     new TextureRegionDrawable(e.uiIcon),
 		     () => {
                 become(e);
                 dialog.hide();
