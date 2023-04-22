@@ -4,6 +4,6 @@
     author: "QmelZ",
     description: "Hackustry v4",
     version: 4,
-    minGameVersion: 126,
+    minGameVersion: 136,
     hidden: true
 }
